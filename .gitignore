@@ -64,3 +64,4 @@ crashlytics-build.properties
 *.log
 *.synctex.gz
 *.out
+.DS_Store
