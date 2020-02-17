@@ -284,89 +284,131 @@ event that may have occurred. These events include:
 
 \section{Functional Requirements}
 \label{sec:functional_requirements}
-% Begin Section
-This section of the SRS should contain all of the software requirements to a level of detail sufficient to enable designers to design a system to satisfy those requirements, and testers to test that the system satisfies those requirements. Throughout this section, every stated requirement should be externally perceivable by users, operators, or other external systems. These requirements should include at a minimum a description of every input (stimulus) into the system, every output (response) from the system, and all functions performed by the system in response to an input or in support of an output.
+The following Business Events are all in the User Viewpoint.
 
-You normally have two options for organizing your functional requirements:
-\begin{enumerate}
-	\item Organize first by \emph{business events}, then by \emph{viewpoints}
-	\item Organize first by \emph{viewpoints}, then by \emph{business events}
+
+\begin{enumerate}[\bf{BE}1.]
+	\item The user wants to create his SE
+    \begin{enumerate}[1.]
+        \item The system shall allow the user to choose the name of their SE
+        \item The system shall allow the user to choose the gender of their SE
+        \item The system shall provide the choice to confirm selection
+        \item The system shall provide the choice to restart creation
+    \end{enumerate}
+    
+	\item The user wants to purchase items
+	\begin{enumerate}[1.]
+		\item The system shall allow the user to browse the in-game store/shop
+        \item The user shall be able to purchase furniture, pets, pet 
+        accessories, exercise equipment and computer upgrades from the shop
+        \item The system shall provide a choice the user to put/remove items 
+        into/from his in-game shopping cart and the total price of the items 
+        inside the cart changes correspondingly.
+        \item The system shall allow the user to checkout to purchase all of 
+        the items in his in-game shopping cart
+        \item The system shall check the user’s current currency
+    \end{enumerate}
+    
+    \item The user wants the SE to play games
+	\begin{enumerate}[1.]
+		\item The system shall allow the user to open the in-game gameboard
+        \item The system shall provide a choice to start playing games
+        \item The system shall provide the choice to stop playing games
+        \item The system shall provide a choice to close the gameboard
+        \item Playing games shall increase the SE’s happiness level
+    \end{enumerate}
+    
+    \item The user wants to increase SE’s in-game currency
+	\begin{enumerate}[1.]
+		\item The system shall allow the user to open SE’s workspace
+        \item The system shall provide a choice for the user to select the 
+        project he wants his SE to work on.
+        \item The system shall provide the choice to let SE start working
+        \item The system shall provide the choice to let SE stop working
+        \item Working shall increase the SE’s tiredness level.
+    \end{enumerate}
+    
+    \item Discrete-time step pass in game
+	\begin{enumerate}[1.]
+        \item The system shall award the user in-game currency and programming 
+        experience as the SE completes projects
+        \item If the project the SE is currently working on is completed, the 
+        system shall let SE stop working and notify the user
+        \item The system shall notify the user once any project SE has processed 
+        on passed its due date
+        \item The system shall decrease the pet’s happiness level overtime
+        \item The system shall increase the pet’s hunger level overtime
+        \item The system shall notify the user once any of SE’s pets wants to eat
+        \item The system shall notify the user once any of SE’s pets wants to 
+        play with SE(pet’s happiness level is low)
+        \item The system shall notify the user once any of SE’s pets dies
+        \item The system shall show updated aggregation of SE’s important 
+        metrics (health, happiness, hunger, age, exercise, tiredness)
+        \item The system shall increase the SE’s hunger level overtime
+        \item The system shall decrease the SE’s exercise level overtime
+        \item The system shall increase the SE’s age overtime
+        \item The system shall notify the user once the SE hungry
+        \item The system shall notify the user once the SE needs to exercise
+        \item The system shall notify the user once the SE needs to rest (SE 
+        reaching its maximum tiredness level)
+        \item The system shall notify the user once the SE is too unhealthy 
+        (close to reaching its end of lifeline)
+        \item The system shall notify the user once the SE reaches its end of 
+        lifeline
+        \item The system shall track the user’s lifespan and record a score
+    \end{enumerate}
+    
+    \item Accessing inventory and using items
+	\begin{enumerate}[1.]
+        \item The system shall allow the user to open the SE’s inventory display 
+        its items
+        \item The system shall allow the user to use/consume the items in SE’s 
+        inventory
+        \item The system shall provide an option to add items to the SE’s 
+        inventory        
+    \end{enumerate}
+
+    \item Interact with objects in the room
+	\begin{enumerate}[1.]
+        \item The system shall allow interaction between the SE and its environment
+        \item The system shall allow the SE to interact with their pet (playing, 
+        feeding)
+        \item Playing with a pet shall increase the user’s happiness level and 
+        the pet’s  happiness level
+        \item Feeding the pet shall decrease the pet’s hunger level
+        \item The system shall allow the SE to use its exercise equipment
+        \item Using exercise equipment shall increase SE’s exercise level
+        \item Using exercise equipment shall increase SE’s tiredness level
+        \item Using exercise equipment frequently shall prolong the SE’s lifespan
+    \end{enumerate}
+
+    \item The user wants to feed the SE
+	\begin{enumerate}[1.]
+        \item The system shall provide an option to order food
+        \item Feeding the SE will reduce its hunger level
+        \item Feeding the SE when it is not hungry shall cause it to be overfed
+        \item Overfeeding the SE will decrease its health level.        
+    \end{enumerate}
+
+    \item The user wants to improve the SE’s skills
+	\begin{enumerate}[1.]
+        \item The system shall allow the user to choose a programming skill of 
+        the SE to upgrade
+        \item Upgrading a certain skill shall cost a certain amount of the SE’s 
+        programming experience.
+        \item Upgrading certain skills shall increase the SE’s income        
+    \end{enumerate}
+
+    \item The user wants to communicate with friends
+	\begin{enumerate}[1.]
+        \item The system shall allow the user to send messages to other users
+        \item The system shall allow the user to receive messages from other users
+        \item The system shall allow the user to share pictures of their room 
+        with other users
+        \item The system shall allow the user to share their current programming 
+        skills with other users               
+    \end{enumerate}
 \end{enumerate}
-Choose the one which makes the most sense.
-
-For example, if you wish to organization by business events:
-\begin{enumerate}[{BE}1.]
-	\item Business Event
-	\begin{enumerate}[{VP1}.1]
-		\item Viewpoint
-			\begin{enumerate}
-				\item Requirement
-				\item Requirement
-				\item \dots
-			\end{enumerate}
-		\item Viewpoint
-			\begin{enumerate}
-				\item Requirement
-				\item Requirement
-				\item \dots
-			\end{enumerate}
-		\item \dots
-	\end{enumerate}
-	\item Business Event
-	\begin{enumerate}[{VP2}.1]
-		\item Viewpoint
-			\begin{enumerate}
-				\item Requirement
-				\item Requirement
-				\item \dots
-			\end{enumerate}
-		\item Viewpoint
-			\begin{enumerate}
-				\item Requirement
-				\item Requirement
-				\item \dots
-			\end{enumerate}
-		\item \dots
-	\end{enumerate}
-\end{enumerate}
-
-\underline{OR}, if you wish to organization by viewpoints:
-\begin{enumerate}[{VP}1.]
-	\item Viewpoint 
-	\begin{enumerate}[{BE1}.1]
-		\item Business Event
-		\begin{enumerate}
-			\item Requirement
-			\item Requirement
-			\item \dots
-		\end{enumerate}
-		\item Business Event
-		\begin{enumerate}
-			\item Requirement
-			\item Requirement
-			\item \dots
-		\end{enumerate}
-		\item \dots
-	\end{enumerate}
-	\item Viewpoint
-	\begin{enumerate}[{BE2}.1]
-		\item Business Event
-		\begin{enumerate}
-			\item Requirement
-			\item Requirement
-			\item \dots
-		\end{enumerate}
-		\item Business Event
-		\begin{enumerate}
-			\item Requirement
-			\item Requirement
-			\item \dots
-		\end{enumerate}
-		\item \dots
-	\end{enumerate}
-\end{enumerate}
-
-% End Section
 
 \section{Non-Functional Requirements}
 \label{sec:non-functional_requirements}
