@@ -91,20 +91,34 @@ Non-Functional Requirements focuses on the required qualities of the software.
 
 \section{Overall Description}
 \label{sec:overall_description}
-% Begin Section
-
-This section of the SRS should describe the general factors that affect the product and its requirements. It does not state specific requirements; it provides a background for those requirements and makes them easier to understand.
 
 \subsection{Product Perspective}
 \label{sub:product_perspective}
-% Begin SubSection
-\begin{enumerate}[a)]
-	\item Put the product into perspective with other related products, i.e., context
-	\item If the product is independent and totally self-contained, it should be stated here
-	\item If the SRS defines a product that is a component of a larger system, as frequently occurs, then this subsection should relate the requirements of that larger system to functionality of the software and should identify interfaces between that system and the software
-	\item A block diagram showing the major components of the larger system, interconnections, and external interfaces can be helpful
+The product is a system modeling application for desktop computers based on the 
+Unity platform using C\#. The product design itself is not a continuation of any 
+predecessor products, but in the past there were many implementations with a 
+similar concept; raising a digital being. The trend of virtual pet games started 
+from mid 1990s to early 2000s, popularized by the Tamagotchis. Our product will 
+differentiate itself by giving users an experience of raising a software engineer 
+from the very beginning.
+
+The system’s main features:
+\begin{enumerate}[1)]
+    \item A server with functionalities:
+    \begin{itemize}
+        \item To provide users with online access via login/logout
+        \item To connect a database with the implementation of a game
+        \item To allow different users to share and interact with each other
+        \item To allow users to give feedback and report bugs
+    \end{itemize}
+    \item A database or a file management system on the user’s computer for 
+    storing:
+    \begin{itemize}
+        \item User account information set
+        \item User game progress
+        \item Product FAQs for convenient look-up
+    \end{itemize}
 \end{enumerate}
-% End SubSection
 
 \subsection{Product Functions}
 \label{sub:product_functions}
