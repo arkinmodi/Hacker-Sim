@@ -20,6 +20,7 @@
     urlcolor=cyan,
 }
 \usepackage{float}
+\usepackage[shortlabels]{enumitem}
 %------------------------------------------------------------------------------
 
 % Header and Footer
@@ -297,7 +298,7 @@ event that may have occurred. These events include:
 The following Business Events are all in the User Viewpoint.
 
 
-\begin{enumerate}[\bf{BE}1.]
+\begin{enumerate}[start=1, label={\bf{BE\arabic*.}}]
 	\item The user wants to create his SE
     \begin{enumerate}[1.]
         \item The system shall allow the user to choose the name of their SE
@@ -422,304 +423,196 @@ The following Business Events are all in the User Viewpoint.
 
 \section{Non-Functional Requirements}
 \label{sec:non-functional_requirements}
-% Begin Section
+
 \subsection{Look and Feel Requirements}
 \label{sub:look_and_feel_requirements}
-% Begin SubSection
 
 \subsubsection{Appearance Requirements}
 \label{ssub:appearance_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{LF}1. ]
-	\item 
+\begin{enumerate}[start=1, label={LF\arabic*.}]
+	\item The system shall have a minimalistic design.
 \end{enumerate}
-% End SubSubSection
 
 \subsubsection{Style Requirements}
 \label{ssub:style_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{LF}1. ]
-	\item 
-\end{enumerate}
-% End SubSubSection
-
-% End SubSection
+N/A
 
 \subsection{Usability and Humanity Requirements}
 \label{sub:usability_and_humanity_requirements}
-% Begin SubSection
 
 \subsubsection{Ease of Use Requirements}
 \label{ssub:ease_of_use_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{UH}1. ]
-	\item 
+\begin{enumerate}[start=1, label={UH\arabic*.}]
+	\item The user shall face a minimal number of errors. 
+	\item The errors shall have a descriptive message.
 \end{enumerate}
-% End SubSubSection
 
 \subsubsection{Personalization and Internationalization Requirements}
 \label{ssub:personalization_and_internationalization_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{UH}1. ]
-	\item 
+\begin{enumerate}[start=3, label={UH\arabic*.}]
+	\item The user shall be able to personalize the SE’s name and gender.
 \end{enumerate}
-% End SubSubSection
 
 \subsubsection{Learning Requirements}
 \label{ssub:learning_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{UH}1. ]
-	\item 
+\begin{enumerate}[start=4, label={UH\arabic*.}]
+    \item The user shall be able to learn the game mechanics through a quick 
+    tutorial.
 \end{enumerate}
-% End SubSubSection
 
 \subsubsection{Understandability and Politeness Requirements}
 \label{ssub:understandability_and_politeness_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{UH}1. ]
-	\item 
+\begin{enumerate}[start=5, label={UH\arabic*.}]
+    \item The system icons shall be taken from their common usage icons where 
+    applicable. 
+    \item The user shall only be promoted with a confirmation box when necessary.
 \end{enumerate}
-% End SubSubSection
 
 \subsubsection{Accessibility Requirements}
 \label{ssub:accessibility_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{UH}1. ]
-	\item 
+\begin{enumerate}[start=7, label={UH\arabic*.}]
+	\item The system shall have subtitles under each icon.
 \end{enumerate}
-% End SubSubSection
-
-% End SubSection
 
 \subsection{Performance Requirements}
 \label{sub:performance_requirements}
-% Begin SubSection
 
 \subsubsection{Speed and Latency Requirements}
 \label{ssub:speed_and_latency_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{PR}1. ]
-	\item 
+\begin{enumerate}[start=1, label={PR\arabic*.}]
+	\item The system shall respond to a user’s input within 5ms.
 \end{enumerate}
-% End SubSubSection
 
 \subsubsection{Safety-Critical Requirements}
 \label{ssub:safety_critical_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{PR}1. ]
-	\item 
-\end{enumerate}
-% End SubSubSection
+N/A
 
 \subsubsection{Precision or Accuracy Requirements}
 \label{ssub:precision_or_accuracy_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{PR}1. ]
-	\item 
+\begin{enumerate}[start=2, label={PR\arabic*.}]
+	\item The system shall record all numerical data upto 8 decimal places.
 \end{enumerate}
-% End SubSubSection
 
 \subsubsection{Reliability and Availability Requirements}
 \label{ssub:reliability_and_availability_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{PR}1. ]
-	\item 
+\begin{enumerate}[start=3, label={PR\arabic*.}]
+    \item The system shall be available at all times except for 2 hours a week 
+    for maintenance.
 \end{enumerate}
-% End SubSubSection
 
 \subsubsection{Robustness or Fault-Tolerance Requirements}
 \label{ssub:robustness_or_fault_tolerance_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{PR}1. ]
-	\item 
+\begin{enumerate}[start=4, label={PR\arabic*.}]
+    \item When network connection during multiplayer is lost, the system will 
+    switch to single-player.
 \end{enumerate}
-% End SubSubSection
 
 \subsubsection{Capacity Requirements}
 \label{ssub:capacity_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{PR}1. ]
-	\item 
+\begin{enumerate}[start=5, label={PR\arabic*.}]
+	\item The system will allow two users to via an online session.
+	\item The system will store the player data.
 \end{enumerate}
-% End SubSubSection
 
 \subsubsection{Scalability or Extensibility Requirements}
 \label{ssub:scalability_or_extensibility_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{PR}1. ]
-	\item 
-\end{enumerate}
-% End SubSubSection
+N/A
 
 \subsubsection{Longevity Requirements}
 \label{ssub:longevity_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{PR}1. ]
-	\item 
+\begin{enumerate}[start=7, label={PR\arabic*.}]
+    \item The system shall be built and maintained for the duration of the 
+    project ending in April 2020.
 \end{enumerate}
-% End SubSubSection
-
-% End SubSection
 
 \subsection{Operational and Environmental Requirements}
 \label{sub:operational_and_environmental_requirements}
-% Begin SubSection
 
 \subsubsection{Expected Physical Environment}
 \label{ssub:expected_physical_environment}
-% Begin SubSubSection
-\begin{enumerate}[{OE}1. ]
-	\item 
-\end{enumerate}
-% End SubSubSection
+N/A
 
 \subsubsection{Requirements for Interfacing with Adjacent Systems}
 \label{ssub:requirements_for_interfacing_with_adjacent_systems}
-% Begin SubSubSection
-\begin{enumerate}[{OE}1. ]
-	\item 
-\end{enumerate}
-% End SubSubSection
+N/A
 
 \subsubsection{Productization Requirements}
 \label{ssub:productization_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{OE}1. ]
-	\item 
+\begin{enumerate}[start=1, label={OE\arabic*.}]
+    \item The system shall be distributed via an online repository. 
+    \item The system shall be packaged in an executable file (.exe and .app).
 \end{enumerate}
-% End SubSubSection
 
 \subsubsection{Release Requirements}
 \label{ssub:release_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{OE}1. ]
-	\item 
+\begin{enumerate}[start=3, label={OE\arabic*.}]
+    \item The system shall have one release at the beginning of April 2020.
 \end{enumerate}
-% End SubSubSection
-
-% End SubSection
 
 \subsection{Maintainability and Support Requirements}
 \label{sub:maintainability_and_support_requirements}
-% Begin SubSection
 
 \subsubsection{Maintenance Requirements}
 \label{ssub:maintenance_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{MS}1. ]
-	\item 
-\end{enumerate}
-% End SubSubSection
+N/A
 
 \subsubsection{Supportability Requirements}
 \label{ssub:supportability_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{MS}1. ]
-	\item 
+\begin{enumerate}[start=1, label={MS\arabic*.}]
+    \item The system shall have a tutorial for explanation of the game.
 \end{enumerate}
-% End SubSubSection
 
 \subsubsection{Adaptability Requirements}
 \label{ssub:adaptability_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{MS}1. ]
-	\item 
-\end{enumerate}
-% End SubSubSection
-
-% End SubSection
+N/A
 
 \subsection{Security Requirements}
 \label{sub:security_requirements}
-% Begin SubSection
 
 \subsubsection{Access Requirements}
 \label{ssub:access_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{SR}1. ]
-	\item 
+\begin{enumerate}[start=1, label={SR\arabic*.}]
+    \item All project members shall have authorized access to all parts of the 
+    system at all times.
 \end{enumerate}
-% End SubSubSection
 
 \subsubsection{Integrity Requirements}
 \label{ssub:integrity_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{SR}1. ]
-	\item 
-\end{enumerate}
-% End SubSubSection
+N/A
 
 \subsubsection{Privacy Requirements}
 \label{ssub:privacy_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{SR}1. ]
-	\item 
-\end{enumerate}
-% End SubSubSection
+N/A
 
 \subsubsection{Audit Requirements}
 \label{ssub:audit_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{SR}1. ]
-	\item 
-\end{enumerate}
-% End SubSubSection
+N/A
 
 \subsubsection{Immunity Requirements}
 \label{ssub:immunity_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{SR}1. ]
-	\item 
-\end{enumerate}
-% End SubSubSection
-
-% End SubSection
+N/A
 
 \subsection{Cultural and Political Requirements}
 \label{sub:cultural_and_political_requirements}
-% Begin SubSection
 
 \subsubsection{Cultural Requirements}
 \label{ssub:cultural_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{CP}1. ]
-	\item 
-\end{enumerate}
-% End SubSubSection
+N/A
 
 \subsubsection{Political Requirements}
 \label{ssub:political_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{CP}1. ]
-	\item 
-\end{enumerate}
-% End SubSubSection
-
-% End SubSection
+N/A
 
 \subsection{Legal Requirements}
 \label{sub:legal_requirements}
-% Begin SubSection
 
 \subsubsection{Compliance Requirements}
 \label{ssub:compliance_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{LR}1. ]
-	\item 
-\end{enumerate}
-% End SubSubSection
+N/A
 
 \subsubsection{Standards Requirements}
 \label{ssub:standards_requirements}
-% Begin SubSubSection
-\begin{enumerate}[{LR}1. ]
-	\item 
-\end{enumerate}
-% End SubSubSection
-
-% End SubSection
-
-% End Section
+N/A
 
 \appendix
 \section{Division of Labour}
