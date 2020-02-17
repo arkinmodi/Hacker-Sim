@@ -63,3 +63,4 @@ crashlytics-build.properties
 *.fls
 *.log
 *.synctex.gz
+*.out
