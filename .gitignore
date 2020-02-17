@@ -58,3 +58,8 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.synctex.gz
