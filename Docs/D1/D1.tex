@@ -213,12 +213,74 @@ Requirements that may be delayed until future versions of the system:
 
 \section{Use Case Diagram}
 \label{sec:use_case_diagram}
-% Begin Section
-This section should provide a use case diagram for your application. 
-\begin{enumerate}[a)]
-	\item Each use case appearing in the diagram should be accompanied by a text description. 
+In this section, we have three Use Case diagrams to illustrate the required 
+business events and their interactions with each other and the user.
+
+\subsubsection*{Use Case Diagram 1:}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{"Use Case Diagram 1".png}
+\end{figure}
+
+\begin{enumerate}
+    \item Create SE: The user creates his SE, by customizing the basic 
+    properties of the SE.
+    \item Purchase Items: User purchases in-game items for his SE with in-game 
+    currency.
+    \item Let the SE Play Games: The user can let his SE play games to gain 
+    happiness.
+    \item Increase Currency: The user increases his SE’s in-game currency by 
+    letting SE work on chosen software projects which would also tired the SE.
+    \item Accessing Inventory and Using Items: The user accesses the SE’s 
+    inventory, adds items into inventory and uses the items inside.
 \end{enumerate}
-% End Section
+
+\subsubsection*{Use Case Diagram 2:}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{"Use Case Diagram 2".png}
+\end{figure}
+
+\begin{enumerate}
+    \item Play With Pets: The user lets SE play with its pet and gain both its 
+    and it's pet’s happiness.
+    \item Feed Pets: The user lets SE feed its pet and decrease its pet’s hunger.
+    \item Using Exercise Equipment: The user lets the SE take exercises with 
+    its exercise equipment. Letting the SE exercise would keep the SE fit, 
+    tired the SE, and also prolong the SE’s lifespan if the exercise equipment 
+    have been used frequently.
+    \item Feed The SE: The user shall be able to feed the SE by ordering food 
+    in-game. Feeding the SE would decrease the SE’s hunger. 
+    \item Overfeed The SE: The user overfeeds the SE by ordering food in-game 
+    when the SE is not hungry. Overfeeding the SE could make the SE’s unhealthy.
+    \item Improve SE’s skill: The user upgrades the SE’s programming skills, 
+    by selecting the skill which the user wants to upgrade, confirming his 
+    selection and spending certain amount of SE’s in-game programming experience 
+    to complete upgrading. Upgrading programming skills could increase SE’s income.
+    \item Communicate With Other Users: The user shall be able to communicate 
+    through the system with other users. By communicating with other users, the 
+    user can send/receive messages to/from other users, share pictures of the 
+    SE’s room and the SE’s current programming skills to other users.
+\end{enumerate}
+
+\subsubsection*{Use Case Diagram 3:}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{"Use Case Diagram 3".png}
+\end{figure}
+
+Use-case diagram 3 (references Business Event 5) outlines the interactions 
+between the user and the systems reaction to a discrete amount of time passed. 
+When a discrete amount of time has passed the system will notify the user of an 
+event that may have occurred. These events include:
+
+\begin{itemize}
+    \item The SE’s pet current state and if it needs attention (hungry, bored, 
+    dead)
+    \item The SE’s current state (tired, hungry, etc.)
+    \item Relevant metrics for the SE
+    \item The completion of a current project, and the awarded currency
+\end{itemize}
 
 \section{Functional Requirements}
 \label{sec:functional_requirements}
