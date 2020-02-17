@@ -21,6 +21,7 @@
 }
 \usepackage{float}
 \usepackage[shortlabels]{enumitem}
+\usepackage{lipsum}
 %------------------------------------------------------------------------------
 
 % Header and Footer
@@ -50,9 +51,11 @@
 %------------------------------------------------------------------------------
 \begin{document}
 
+\pagenumbering{gobble}
 \maketitle	
 \newpage
 
+\pagenumbering{arabic}
 \section{Introduction}
 \label{sec:introduction}
 This is the Software Requirement Specification for Hacker Sim.
