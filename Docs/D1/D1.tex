@@ -145,10 +145,10 @@ involved with the lifecycle of specimen and attempt to promote it with a set
 of means and reach end-game goal. A currency system is designed for the in-game 
 shop and the user can earn currency from initiating interactions/events with 
 their SE. For example, working and completing coding projects. The in-game 
-shop contains three main categories of items: interactable items (pets and 
-exercise equipment), furniture and room upgrades and food. The specimen has a 
-list of metrics, i.e. tiredness, happiness, age, health, etc. The user must 
-follow certain rules to keep metrics within a rational range, otherwise it will 
+shop contains three main categories of items: interactable items (exercise 
+equipment), furniture and room upgrades and food. The specimen has a list of 
+metrics, i.e. tiredness, happiness, age, health, etc. The user must follow 
+certain rules to keep metrics within a rational range, otherwise it will 
 hinder specimen growth or lead to game failure. The user will be able to view 
 their specimen’s information to check their progress and current health. 
 
@@ -245,7 +245,8 @@ business events and their interactions with each other and the user.
     \item Let the SE Play Games: The user can let his SE play games to gain 
     happiness.
     \item Increase Currency: The user increases his SE’s in-game currency by 
-    letting SE work on chosen software projects which would also tired the SE.
+    letting SE work on software projects which would also increase the SE’s 
+    level of tiredness.
     \item Accessing Inventory and Using Items: The user accesses the SE’s 
     inventory, adds items into inventory and uses the items inside.
 \end{enumerate}
@@ -257,12 +258,9 @@ business events and their interactions with each other and the user.
 \end{figure}
 
 \begin{enumerate}
-    \item Play With Pets: The user lets SE play with its pet and gain both its 
-    and it's pet’s happiness.
-    \item Feed Pets: The user lets SE feed its pet and decrease its pet’s hunger.
-    \item Using Exercise Equipment: The user lets the SE take exercises with 
-    its exercise equipment. Letting the SE exercise would keep the SE fit, 
-    tired the SE, and also prolong the SE’s lifespan if the exercise equipment 
+    \item Using Exercise Equipment: The user lets the SE exercise with 
+    its exercise equipment. Letting the SE exercise would keep the SE fit, make 
+    the SE tired, and also prolong the SE’s lifespan if the exercise equipment 
     have been used frequently.
     \item Feed The SE: The user shall be able to feed the SE by ordering food 
     in-game. Feeding the SE would decrease the SE’s hunger. 
@@ -290,8 +288,6 @@ When a discrete amount of time has passed the system will notify the user of an
 event that may have occurred. These events include:
 
 \begin{itemize}
-    \item The SE’s pet current state and if it needs attention (hungry, bored, 
-    dead)
     \item The SE’s current state (tired, hungry, etc.)
     \item Relevant metrics for the SE
     \item The completion of a current project, and the awarded currency
@@ -314,23 +310,14 @@ The following Business Events are all in the User Viewpoint.
 	\item The user wants to purchase items for the SE
 	\begin{enumerate}[1.]
 		\item The system shall allow the user to browse the in-game store/shop
-        \item The user shall be able to purchase furniture, pets, pet 
-        accessories, exercise equipment and computer upgrades from the shop
+        \item The user shall be able to purchase furniture, exercise equipment 
+        and computer upgrades from the shop
         \item The system shall provide a choice the user to put/remove items 
         into/from his in-game shopping cart and the total price of the items 
-        inside the cart changes correspondingly.
+        inside the cart changes correspondingly
         \item The system shall allow the user to checkout to purchase all of 
         the items in his in-game shopping cart
         \item The system shall check the user’s current currency
-    \end{enumerate}
-    
-    \item The user wants the SE to play games
-	\begin{enumerate}[1.]
-		\item The system shall allow the user to open the in-game gameboard
-        \item The system shall provide a choice to start playing games
-        \item The system shall provide the choice to stop playing games
-        \item The system shall provide a choice to close the gameboard
-        \item Playing games shall increase the SE’s happiness level
     \end{enumerate}
     
     \item The user wants to increase SE’s in-game currency
@@ -351,12 +338,6 @@ The following Business Events are all in the User Viewpoint.
         system shall let SE stop working and notify the user
         \item The system shall notify the user once any project SE has processed 
         on passed its due date
-        \item The system shall decrease the pet’s happiness level overtime
-        \item The system shall increase the pet’s hunger level overtime
-        \item The system shall notify the user once any of SE’s pets wants to eat
-        \item The system shall notify the user once any of SE’s pets wants to 
-        play with SE(pet’s happiness level is low)
-        \item The system shall notify the user once any of SE’s pets dies
         \item The system shall show updated aggregation of SE’s important 
         metrics (health, happiness, hunger, age, exercise, tiredness)
         \item The system shall increase the SE’s hunger level overtime
@@ -386,15 +367,13 @@ The following Business Events are all in the User Viewpoint.
     \item The user want to interact with objects in the room
 	\begin{enumerate}[1.]
         \item The system shall allow interaction between the SE and its environment
-        \item The system shall allow the SE to interact with their pet (playing, 
-        feeding)
-        \item Playing with a pet shall increase the user’s happiness level and 
-        the pet’s  happiness level
         \item Feeding the pet shall decrease the pet’s hunger level
         \item The system shall allow the SE to use its exercise equipment
         \item Using exercise equipment shall increase SE’s exercise level
         \item Using exercise equipment shall increase SE’s tiredness level
         \item Using exercise equipment frequently shall prolong the SE’s lifespan
+        \item The system shall allow the SE to play games on it’s computer
+        \item Playing game shall increase the SE’s happiness index
     \end{enumerate}
 
     \item The user wants to feed the SE
