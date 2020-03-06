@@ -307,6 +307,209 @@ their purpose and relationship to other subsystems.
     \end{tabular}
 \end{table}
 
+\subsection{Boundary Class CRC Cards}
+\label{sec:boundary_class_CRC_cards}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{5cm}|p{5cm}|}
+        \hline
+        \multicolumn{2}{|l|}{\textbf{Class Name:} General Room Interface}\\
+        \hline
+        \textbf{Responsibility:} & \textbf{Collaborators:}\\
+        \hline
+        Present SE current state (gaming, sleeping, exercising, working) & General Room Controller\\
+        ~ & ~\\
+        Present room based on size & General Room Controller\\
+        ~ & ~\\
+        Present room items (furniture, equipment, etc) & General Room Controller\\
+        \hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{5cm}|p{5cm}|}
+        \hline
+        \multicolumn{2}{|l|}{\textbf{Class Name:} User Information Interface}\\
+        \hline
+        \textbf{Responsibility:} & \textbf{Collaborators:}\\
+        \hline
+        Present username & User Attributes Controller\\
+        ~ & ~\\
+        Present user’s currency & User Attributes Controller\\
+        ~ & ~\\
+        Present coding experience level & User Attributes Controller\\
+        ~ & ~\\
+        Present user’s friends & User Attributes Controller\\
+        \hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{5cm}|p{5cm}|}
+        \hline
+        \multicolumn{2}{|l|}{\textbf{Class Name:} Settings Interface}\\
+        \hline
+        \textbf{Responsibility:} & \textbf{Collaborators:}\\
+        \hline
+        Present option to quit & General Room Controller\\
+        \hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{5cm}|p{5cm}|}
+        \hline
+        \multicolumn{2}{|l|}{\textbf{Class Name:} SE Creation UI}\\
+        \hline
+        \textbf{Responsibility:} & \textbf{Collaborators:}\\
+        \hline
+        Receive input for SE traits (name, sex) & SE Attributes Controller\\
+        \hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{5cm}|p{5cm}|}
+        \hline
+        \multicolumn{2}{|l|}{\textbf{Class Name:} SE Attribute UI}\\
+        \hline
+        \textbf{Responsibility:} & \textbf{Collaborators:}\\
+        \hline
+        Present SE Attributes (sex, name, happiness, hunger, skill, fitness level, tiredness level) & SE Attributes Controller\\
+        \hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{5cm}|p{5cm}|}
+        \hline
+        \multicolumn{2}{|l|}{\textbf{Class Name:} SE Inventory UI}\\
+        \hline
+        \textbf{Responsibility:} & \textbf{Collaborators:}\\
+        \hline
+        Present items list & SE Inventory Controller\\
+        ~ & ~\\
+        Receive input to use items & SE Inventory Controller\\
+        ~ & ~\\
+        Receive input to discard items & SE Inventory Controller\\
+        ~ & ~\\
+        Use Items & SE Inventory Controller\\
+        \hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{5cm}|p{5cm}|}
+        \hline
+        \multicolumn{2}{|l|}{\textbf{Class Name:} Exercise Equipment}\\
+        \hline
+        \textbf{Responsibility:} & \textbf{Collaborators:}\\
+        \hline
+        Receive input to let SE take exercise & General (Room) Controller\\
+        ~ & ~\\
+        Receive input to let SE finish exercise & General (Room) Controller\\
+        ~ & ~\\
+        Show that SE is exercising & ~\\
+        \hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{5cm}|p{5cm}|}
+        \hline
+        \multicolumn{2}{|l|}{\textbf{Class Name:} Gaming}\\
+        \hline
+        \textbf{Responsibility:} & \textbf{Collaborators:}\\
+        \hline
+        Receive input to let SE play games & SE Attributes Controller\\
+        ~ & ~\\
+        Receive input to let SE stop playing games & SE Attributes Controller\\
+        ~ & ~\\
+        Show that SE is gaming & ~\\
+        \hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{5cm}|p{5cm}|}
+        \hline
+        \multicolumn{2}{|l|}{\textbf{Class Name:} Sleeping}\\
+        \hline
+        \textbf{Responsibility:} & \textbf{Collaborators:}\\
+        \hline
+        Receive input to let SE play sleep & SE Attributes Controller\\
+        ~ & ~\\
+        Show that SE is sleeping & ~\\
+        \hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{5cm}|p{5cm}|}
+        \hline
+        \multicolumn{2}{|l|}{\textbf{Class Name:} Shop UI}\\
+        \hline
+        \textbf{Responsibility:} & \textbf{Collaborators:}\\
+        \hline
+        Present item list with prices & Shop Controller\\
+        ~ & ~\\
+        Receive input to purchase items/skills & Shop Controller\\
+        ~ & ~\\
+        Present programming skills unowned by SE & Shop Controller\\
+        ~ & ~\\
+        Present skills information & Shop Controller\\
+        ~ & ~\\
+        Filter item list & Shop Controller\\
+        \hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{5cm}|p{5cm}|}
+        \hline
+        \multicolumn{2}{|l|}{\textbf{Class Name:} Project UI}\\
+        \hline
+        \textbf{Responsibility:} & \textbf{Collaborators:}\\
+        \hline
+        Present software projects for SE & Project Controller\\
+        ~ & ~\\
+        Present projects information (profit, skills required, deadline, completion) & Project Controller\\
+        ~ & ~\\
+        Receive input to let SE start projects & Project Controller\\
+        ~ & ~\\
+        Receive input to let SE complete projects & Project Controller\\
+        \hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{5cm}|p{5cm}|}
+        \hline
+        \multicolumn{2}{|l|}{\textbf{Class Name:} Friends Message UI}\\
+        \hline
+        \textbf{Responsibility:} & \textbf{Collaborators:}\\
+        \hline
+        Present user’s friends list & Friend and Chat Controller\\
+        ~ & ~\\
+        Present user current chat & Friend and Chat Controller\\
+        ~ & ~\\
+        Receive input to send message/chat & Friend and Chat Controller\\
+        \hline
+    \end{tabular}
+\end{table}
+
 \newpage
 \appendix
 \section{Division of Labour}
