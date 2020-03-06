@@ -99,19 +99,36 @@ SE - Software Engineer
 
 \section{Architectural Design}
 \label{sec:architectural_design}
-% Begin Section
-This section should provide an overview of the overall architectural design of your application. You overall architecture should show the division of the system into subsystems with high cohesion and low coupling.
 
 \subsection{System Architecture}
 \label{sub:system_architecture}
-% Begin SubSection
-\begin{enumerate}[a)]
-	\item Identify and explain the overall architecture of your system
-	\item Be sure to clearly state the name of the architecture
-	\item Provide the reasoning and justification of the choice
-	\item Provide a structural architecture diagram showing the relationship among the subsystems (if appropriate)
-\end{enumerate}
-% End SubSection
+The architecture style that we will be using for our system is an architecture 
+that is interaction-oriented; Presentation-Abstraction-Control (PAC). Among the 
+other architectural styles, data-centric and data-flow architecture, we felt 
+that an interaction-oriented architecture would fit our project the best. We 
+believe this because this type of architecture is most appropriate when there 
+is a need to separate the user’s interactions from the data abstraction and 
+data processing. This type of architecture effectively divides the data into 
+logical sections and allows an effective presentation of content based on 
+changes in the data utilizing the view modules. From interaction-oriented 
+architecture, there were two possible routes to take, Model-View-Controller 
+(MVC) architecture and Presentation-Abstraction-Control (PAC) architecture. We 
+chose to use Presentation-Abstraction-Control as it emphasizes a hierarchical 
+architecture that allows low-coupling of agents protecting other agents from 
+being modified by the changes of one. In essence, this will provide us with an 
+effective way to identify our core entities and link them to relevant agents 
+with ease. It will also allow multiple agents to perform their tasks, and update 
+their view accordingly without affecting the other agents. MVC highly depends 
+upon a uniform data set for all views that changes at a constant rate. Given that 
+we have several different entities, each with their unique data set that will 
+be updated at different rates, the need for PAC architecture for our system is 
+evident.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{"PAC Structural Architecture Diagram".png}
+    \caption{PAC Structural Architecture Diagram}
+\end{figure}
 
 \subsection{Subsystems}
 \label{sub:subsystems}
