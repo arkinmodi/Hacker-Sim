@@ -132,13 +132,57 @@ evident.
 
 \subsection{Subsystems}
 \label{sub:subsystems}
-% Begin SubSection
-\begin{enumerate}[a)]
-	\item Provide a brief description of each subsystem. Be sure to document its purpose and relationship to other subsystems.
+The following are explanations of the subsystems for our project that outline 
+their purpose and relationship to other subsystems.
+\begin{enumerate}
+    \item General (Room)\\
+    Purpose: This agent is the highest-level agent that controls every other 
+    agent and presents the default ‘room’ view as well as ability to interact 
+    with the objects, shop, friends and the SE\\
+    Direct Relationships: Shop, Friends and Chat, Projects    
+    \item Shop\\
+    Purpose: This agent is an intermediate-level agent that controls the user’s 
+    interactions with the shop, including purchasing and browsing items. This 
+    agent may then update the SE’s inventory if the user chooses to purchase an 
+    item.\\
+    Direct Relationships: SE Inventory, User Attributes, General (Room)
+    \item Friends \& Chat\\
+    Purpose: This agent is an intermediate-level agent that stores data on chat 
+    history, and provides the user with the ability to message friends based on 
+    the user’s friends list.\\
+    Direct Relationships: User’s Attributes, General (Room)
+    \item Projects\\
+    Purpose: This intermediate-level agent stores information regarding current 
+    and future projects the SE may work on to gain currency.\\
+    Direct Relationships: User’s Attributes, SE Attributes, General (Room), 
+    Time-Step
+    \item Time-Step\\
+    Purpose: This intermediate-level agent controls the passage of time, and 
+    signals the SE Attributes accordingly with changes in their current state 
+    or information. These changes include hunger, project completion, tiredness 
+    level, happiness change, etc.\\
+    Direct Relationships: SE Attributes, Projects
+    \item Software Engineer (SE) Inventory\\
+    Purpose: This bottom-level agent stores data based on the items in the SE’s 
+    inventory and adjusts the data and view based upon the user’s interactions 
+    with the store or through the use of items.\\
+    Direct Relationships: Shop, SE Attributes
+    \item Software Engineer (SE) Attributes\\
+    Purpose: This bottom-level agent stores data based on the SE’s current 
+    attributes such as their happiness index, how tired they are, if they are 
+    hungry, if they completed a project, etc. These attributes may be adjusted 
+    by the Time-Step agent or the Project agent, or changed directly by the 
+    user.\\
+    Direct Relationships: Projects, Time-Step, SE Inventory
+    \item User Attributes\\
+    Purpose: This bottom-level agent stores data based on the user’s current 
+    attributes. Some data is immutable and may not be changed throughout the 
+    game, however, there is data that may be manipulated by the project 
+    controller, providing the user with skill points to increase the SE’s 
+    ability, a change in their current balance, and addition or removal or 
+    friends.\\
+    Direct Relationships: Shop, Friends and Chat, Projects
 \end{enumerate}
-% End SubSection
-
-% End Section
 	
 \section{Class Responsibility Collaboration (CRC) Cards}
 \label{sec:class_responsibility_collaboration_crc_cards}
