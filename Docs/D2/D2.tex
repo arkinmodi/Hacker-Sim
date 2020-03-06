@@ -14,6 +14,7 @@
 \usepackage{extarrows}
 \usepackage{setspace}
 \usepackage{float}
+\usepackage{makecell}
 %------------------------------------------------------------------------------
 
 % Header and Footer
@@ -506,6 +507,169 @@ their purpose and relationship to other subsystems.
         Present user current chat & Friend and Chat Controller\\
         ~ & ~\\
         Receive input to send message/chat & Friend and Chat Controller\\
+        \hline
+    \end{tabular}
+\end{table}
+
+\subsection{Controller Class CRC Cards}
+\label{sec:controller_class_CRC_cards}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{5cm}|p{5cm}|}
+        \hline
+        \multicolumn{2}{|l|}{\textbf{Class Name:} General Room Controller}\\
+        \hline
+        \textbf{Responsibility:} & \textbf{Collaborators:}\\
+        \hline
+        Update SE state & \makecell[l]{General Room \\ General Room Interface \\ SE Attributes Controller}\\
+        ~ & ~\\
+        Update room state & \makecell[l]{General Room \\ General Room Interface}\\
+        ~ & ~\\
+        Open the Shop & Shop Controller\\
+        ~ & ~\\
+        Open the Inventory & SE Inventory Controller\\
+        ~ & ~\\
+        Access User Attributes & User Attributes Controller\\
+        ~ & ~\\
+        Access SE Attributes & SE Attributes Controller\\
+        ~ & ~\\
+        Access Projects & Project Controller\\
+        ~ & ~\\
+        Access Friend and Chat & Friend and Chat Controller\\
+        \hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{5cm}|p{5cm}|}
+        \hline
+        \multicolumn{2}{|l|}{\textbf{Class Name:} User Attributes Controller}\\
+        \hline
+        \textbf{Responsibility:} & \textbf{Collaborators:}\\
+        \hline
+        Update currency as requested by collaborating controller classes & \makecell[l]{Shop Controller\\Project Controller\\User Attributes}\\
+        ~ & ~\\
+        Update coding experience level as requested by collaborating controller classes & \makecell[l]{Shop Controller\\Project Controller\\User Attributes}\\
+        ~ & ~\\
+        Update friends list after adding or removing a friend & \makecell[l]{Friends and Chat Controller\\User Attributes}\\
+        ~ & ~\\
+        Update User Information Interface & \makecell[l]{User Attributes\\User Information Interface}\\
+        \hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{5cm}|p{5cm}|}
+        \hline
+        \multicolumn{2}{|l|}{\textbf{Class Name:} SE Attribute Controller}\\
+        \hline
+        \textbf{Responsibility:} & \textbf{Collaborators:}\\
+        \hline
+        Set SE’s name during creation & \makecell[l]{SE Creation UI\\SE Attributes}\\
+        ~ & ~\\
+        Choose SE’s sex during creation & \makecell[l]{SE Creation UI\\SE Attributes}\\
+        ~ & ~\\
+        Update hunger level by a discrete-time passing & \makecell[l]{Time-step Controller\\SE Attributes}\\
+        ~ & ~\\
+        Decrease hunger level as user using “food” items in Inventory & \makecell[l]{Inventory Controller\\SE Attributes}\\
+        ~ & ~\\
+        Update happiness level by playing game for discrete-time pass & \makecell[l]{Gaming\\SE Attributes\\Time-Step Controller}\\
+        ~ & ~\\
+        Update tiredness level by working & \makecell[l]{Project Controller\\Exercise Equipment\\Time-Step Controller\\SE Attributes}\\
+        ~ & ~\\
+        Increase overall fitness level by using exercise equipment and increase tiredness level & \makecell[l]{Exercise Equipment\\SE Attributes}\\
+        ~ & ~\\
+        Prolong lifespan by using exercise equipment frequently enough & \makecell[l]{Exercise Equipment\\SE Attributes}\\
+        ~ & ~\\
+        Update SE’s skills after using skill in Inventory & \makecell[l]{Inventory Controller\\SE Attributes}\\
+        ~ & ~\\
+        Update SE’s tiredness by sleeping & \makecell[l]{SE Attributes\\Sleeping\\Time-Step controller}\\
+        ~ & ~\\
+        Update SE attributes UI & \makecell[l]{SE Attribute UI\\SE Attributes}\\
+        \hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{5cm}|p{5cm}|}
+        \hline
+        \multicolumn{2}{|l|}{\textbf{Class Name:} SE Inventory Controller}\\
+        \hline
+        \textbf{Responsibility:} & \textbf{Collaborators:}\\
+        \hline
+        Update Inventory (addition or removal of items) & \makecell[l]{SE Attribute Controller\\Shop controller\\SE Inventory UI\\SE Inventory}\\
+        \hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{5cm}|p{5cm}|}
+        \hline
+        \multicolumn{2}{|l|}{\textbf{Class Name:} Time-Step Controller}\\
+        \hline
+        \textbf{Responsibility:} & \textbf{Collaborators:}\\
+        \hline
+        Update value of in-game time & Time-Step\\
+        ~ & ~\\
+        Increase SE’s hunger after a discrete-time pass & SE Attributes Controller\\
+        ~ & ~\\
+        Increase SE’s happiness after gaming for a discrete-time pass & SE Attributes Controller\\
+        ~ & ~\\
+        Increase SE’s tiredness after working for a discrete-time pass & SE Attributes Controller\\
+        \hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{5cm}|p{5cm}|}
+        \hline
+        \multicolumn{2}{|l|}{\textbf{Class Name:} Shop Controller}\\
+        \hline
+        \textbf{Responsibility:} & \textbf{Collaborators:}\\
+        \hline
+        Decrease user’s currency/coding experience level after purchasing items/skills & \makecell[l]{User Attributes Controller\\Shop}\\
+        ~ & ~\\
+        Adding item(s)/skill(s) purchased into Inventory & \makecell[l]{SE Inventory Controller\\Shop}\\
+        ~ & ~\\
+        Updates Shop UI as features of filter being specified & \makecell[l]{Shop UI\\Shop}\\
+        \hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{5cm}|p{5cm}|}
+        \hline
+        \multicolumn{2}{|l|}{\textbf{Class Name:} Project Controller}\\
+        \hline
+        \textbf{Responsibility:} & \textbf{Collaborators:}\\
+        \hline
+        Reward a specific amount of currency and coding experience level to user after completion of project (according to “reward”) & \makecell[l]{User Attributes Controller\\Projects}\\
+        ~ & ~\\
+        Updates Projects & Projects\\
+        ~ & ~\\
+        Update Projects UI & \makecell[l]{Project UI\\Projects}\\
+        \hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{5cm}|p{5cm}|}
+        \hline
+        \multicolumn{2}{|l|}{\textbf{Class Name:} Friends and Chat Controller}\\
+        \hline
+        \textbf{Responsibility:} & \textbf{Collaborators:}\\
+        \hline
+        Update Chat history & \makecell[l]{Friends Messaging UI\\Chat History}\\
+        ~ & ~\\
+        Update Friend List & \makecell[l]{Friends Messaging UI\\User Attributes Controller}\\
         \hline
     \end{tabular}
 \end{table}
