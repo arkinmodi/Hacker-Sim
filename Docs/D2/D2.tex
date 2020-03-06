@@ -1,0 +1,176 @@
+% !TeX root = ./D2.tex
+\documentclass[]{article}
+
+% Imported Packages
+%------------------------------------------------------------------------------
+\usepackage{amssymb}
+\usepackage{amstext}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{extarrows}
+\usepackage{setspace}
+%------------------------------------------------------------------------------
+
+% Header and Footer
+%------------------------------------------------------------------------------
+\pagestyle{plain}  
+\renewcommand\headrulewidth{0.4pt}                                      
+\renewcommand\footrulewidth{0.4pt}                                    
+%------------------------------------------------------------------------------
+
+% Title Details
+%------------------------------------------------------------------------------
+\title{
+    \textbf{Group 10 - Deliverable \#2}\\
+    \large SFWRENG 3A04: Software Design III - Large System Design
+}
+\author{
+    Andrew Hum 400138826\\
+    Arkin Modi 400142497\\
+    Hongzhao Tan 400136957\\
+    Christopher Vishnu 400129743\\
+    Shengchen Zhou 400050783\\
+}
+\date{March 5, 2020}
+%------------------------------------------------------------------------------
+
+% Document
+%------------------------------------------------------------------------------
+\begin{document}
+
+\maketitle
+\newpage
+
+\section{Introduction}
+\label{sec:introduction}
+
+\subsection{Purpose}
+\label{sub:purpose}
+The purpose of the document is to focus on the architecture of the HackerSim 
+system. The system's architecture is based upon business events developed in 
+Deliverable 1 to outline the components of the HackerSim software for both the 
+client and the developer. It covers the architectural decisions that have been 
+made regarding the system and its components. This document is intended for the 
+project manager, the current project team and any future development teams for 
+the HackerSim Project.
+
+\subsection{System Description}
+\label{sub:system_description}
+The HackerSim system is an interactive game that will allow the user to raise a 
+Software Engineer in their room. The main component of our software would be 
+the General Room which is the link that interacts with the rest of the 
+sub-components. The main sub-components that the General Room interacts with 
+which would be the Shop, Friends and Chat, Project and the Time-step. The Shop 
+component focuses on interacting with the inventory for purchasing and browsing 
+items. The Friends and Chat component focuses on providing message functionality 
+between the user and the friends. The Project component focuses on the project 
+and future projects the Software Engineer has to do to gain in-game currency. 
+Finally, the Time-step component focuses on the passage of time and which 
+affects the Software Engineer’s attributes.
+
+\subsection{Overview}
+\label{sub:overview}
+This document is organized by the following sections: Analysis Class Diagram, 
+Architectural Design, Class Responsibility Collaboration Cards. Analysis Class 
+Diagram focuses on providing details about the structure of the classes and 
+their relationships. Architectural Design focuses on the overall architectural 
+design of the HackerSim application, showing the division of the system into 
+subsystems. Finally, Class Responsibility Collaboration (CRC) Cards focus on 
+each individual class and its responsibilities and relations in which they 
+collaborate with other classes.
+
+\subsection{Definitions, Acronyms, Abbreviations}
+\label{sub:definitions_acronyms_abbreviations}
+SE - Software Engineer
+
+\section{Analysis Class Diagram}
+\label{sec:analysis_class_diagram}
+% Begin Section
+This section should provide an analysis class diagram for your application.
+% End Section
+
+
+\section{Architectural Design}
+\label{sec:architectural_design}
+% Begin Section
+This section should provide an overview of the overall architectural design of your application. You overall architecture should show the division of the system into subsystems with high cohesion and low coupling.
+
+\subsection{System Architecture}
+\label{sub:system_architecture}
+% Begin SubSection
+\begin{enumerate}[a)]
+	\item Identify and explain the overall architecture of your system
+	\item Be sure to clearly state the name of the architecture
+	\item Provide the reasoning and justification of the choice
+	\item Provide a structural architecture diagram showing the relationship among the subsystems (if appropriate)
+\end{enumerate}
+% End SubSection
+
+\subsection{Subsystems}
+\label{sub:subsystems}
+% Begin SubSection
+\begin{enumerate}[a)]
+	\item Provide a brief description of each subsystem. Be sure to document its purpose and relationship to other subsystems.
+\end{enumerate}
+% End SubSection
+
+% End Section
+	
+\section{Class Responsibility Collaboration (CRC) Cards}
+\label{sec:class_responsibility_collaboration_crc_cards}
+% Begin Section
+This section should contain all of your CRC cards.
+
+\begin{enumerate}[a)]
+	\item Provide a CRC Card for each identified class
+	\item Please use the format outlined in tutorial, i.e., 
+	\begin{table}[ht]
+		\centering
+		\begin{tabular}{|p{5cm}|p{5cm}|}
+		\hline 
+		 \multicolumn{2}{|l|}{\textbf{Class Name:}} \\
+		\hline
+		\textbf{Responsibility:} & \textbf{Collaborators:} \\
+		\hline
+		\vspace{1in} & \\
+		\hline
+		\end{tabular}
+	\end{table}
+	
+\end{enumerate}
+% End Section
+
+\appendix
+\section{Division of Labour}
+\label{sec:division_of_labour}
+% Begin Section
+Include a Division of Labour sheet which indicates the contributions of each team member. This sheet must be signed by all team members.
+% End Section
+
+\newpage
+\section*{IMPORTANT NOTES}
+\begin{itemize}
+%	\item You do \underline{NOT} need to provide a text explanation of each diagram; the diagram should speak for itself
+	\item Please document any non-standard notations that you may have used
+	\begin{itemize}
+		\item \emph{Rule of Thumb}: if you feel there is any doubt surrounding the meaning of your notations, document them
+	\end{itemize}
+	\item Some diagrams may be difficult to fit into one page
+	\begin{itemize}
+		\item It is OK if the text is small but please ensure that it is readable when printed
+		\item If you need to break a diagram onto multiple pages, please adopt a system of doing so and thoroughly explain how it can be reconnected from one page to the next; if you are unsure about this, please ask about it
+	\end{itemize}
+	\item Please submit the latest version of Deliverable 1 with Deliverable 2
+	\begin{itemize}
+		\item It does not have to be a freshly printed version; the latest marked version is OK
+	\end{itemize}
+	\item If you do \underline{NOT} have a Division of Labour sheet, your deliverable will \underline{NOT} be marked
+\end{itemize}
+
+
+\end{document}
+%------------------------------------------------------------------------------
