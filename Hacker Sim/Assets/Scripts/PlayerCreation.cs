@@ -32,7 +32,7 @@ public class PlayerCreation : MonoBehaviour
                 newPlayer.PlayerGender = "Male";
             } else if (isFemale)
             {
-                newPlayer.PlayerGender = "Female;"
+                newPlayer.PlayerGender = "Female";
             }
         }
     }
