@@ -2,12 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SEAttributes : MonoBehaviour
+public class SEAttributes 
 {
     private string playerName;
     private string playerGender;
-    private List<(string, int)> playerAttributes;
-    
+
+    // Stats
+    private int mood;
+    private int tired;
+    private int hunger;
+    private int fitness;
+
     public string PlayerName
     {
         get { return playerName; }
@@ -20,9 +25,27 @@ public class SEAttributes : MonoBehaviour
         set { playerGender = value; }
     }
 
-    public List<(string, int)> PlayerAttributes
+    public int Mood
     {
-        get { return playerAttributes; }
-        set { playerAttributes = value; }
+        get { return mood; }
+        set { mood = value; }
+    }
+
+    public int Tired
+    {
+        get { return tired; }
+        set { tired = value; }
+    }
+
+    public int Hunger
+    {
+        get { return hunger; }
+        set { hunger = value; }
+    }
+
+    public int Fitness
+    {
+        get { return fitness; }
+        set { fitness = value; }
     }
 }
