@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI; // To deal with Unity UI elements
 
 public class PlayerCreation : MonoBehaviour
-{ 
+{
     public SEAttributes newPlayer = new SEAttributes();
     private string playerName;
     private string playerGender;
@@ -30,10 +30,13 @@ public class PlayerCreation : MonoBehaviour
         newPlayer.Fitness = 100;
 
         SaveSEAttributes.SavePlayer(newPlayer);
+        newPlayer = SaveSEAttributes.LoadPlayer();
 
         // Testing
         Debug.Log("Player Name: " + newPlayer.PlayerName);
         Debug.Log("Player Gender: " + newPlayer.PlayerGender);
+        Debug.Log("Player Mood: " + newPlayer.Mood);
+        Debug.Log("Player Hunger: " + newPlayer.Hunger);
     }
 
-
+}
