@@ -7,6 +7,7 @@ public class SEAttributes
 {
     private string playerName;
     private string playerGender;
+    private int playerAge;
 
     // Stats
     private int mood;
@@ -24,6 +25,12 @@ public class SEAttributes
     {
         get { return playerGender; }
         set { playerGender = value; }
+    }
+
+    public int PlayerAge
+    {
+        get { return playerAge; }
+        set { playerAge = value; }
     }
 
     public int Mood

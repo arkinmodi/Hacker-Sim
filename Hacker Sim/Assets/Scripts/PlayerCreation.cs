@@ -24,6 +24,7 @@ public class PlayerCreation : MonoBehaviour
         playerName = inputField.GetComponent<Text>().text;
         newPlayer.PlayerName = playerName;
         newPlayer.PlayerGender = playerGender;
+        newPlayer.PlayerAge = 15;
         newPlayer.Mood = 100;
         newPlayer.Hunger = 100;
         newPlayer.Tired = 100;
