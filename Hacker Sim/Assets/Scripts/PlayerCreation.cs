@@ -8,8 +8,6 @@ public class PlayerCreation : MonoBehaviour
     public SEAttributes newPlayer = new SEAttributes();
     private string playerName;
     private string playerGender;
-    // private bool isMale;
-    // private bool isFemale;
     public GameObject inputField; // Where we are typing the text
 
     public void SelectMale()
@@ -25,8 +23,13 @@ public class PlayerCreation : MonoBehaviour
     {
         playerName = inputField.GetComponent<Text>().text;
         newPlayer.PlayerName = playerName;
-        
         newPlayer.PlayerGender = playerGender;
+        newPlayer.Mood = 100;
+        newPlayer.Hunger = 100;
+        newPlayer.Tired = 100;
+        newPlayer.Fitness = 100;
+
+        SaveSEAttributes.SavePlayer(newPlayer);
 
         // Testing
         Debug.Log("Player Name: " + newPlayer.PlayerName);
@@ -34,20 +37,3 @@ public class PlayerCreation : MonoBehaviour
     }
 
 
-
-    //private void OnGUI()
-    //{
-    //    isMale = GUILayout.Toggle(isMale, "Male");
-    //    isFemale = GUILayout.Toggle(isFemale, "Female");
-    //    if (GUILayout.Button("Create"))
-    //    {
-    //        if (isMale)
-    //        {
-    //            newPlayer.PlayerGender = "Male";
-    //        } else if (isFemale)
-    //        {
-    //            newPlayer.PlayerGender = "Female";
-    //        }
-    //    }
-    //}
-}
