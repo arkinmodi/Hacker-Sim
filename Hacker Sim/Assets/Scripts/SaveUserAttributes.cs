@@ -4,7 +4,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 public class SaveUserAttributes : MonoBehaviour
 {
-    public static void SavePlayer(UserAttributes user)
+    public static void SaveUser(UserAttributes user)
     {
         BinaryFormatter formatter = new BinaryFormatter();
 

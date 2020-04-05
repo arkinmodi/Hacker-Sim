@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class UserAttributes
 {
     private double currency;
     private double exp;
+    private int level;
     private List<string> friends; // A list containing the usernames of friends
 
     public double Currency
@@ -24,6 +26,12 @@ public class UserAttributes
     {
         get { return friends; }
         set { friends = value; }
+    }
+
+    public int Level
+    {
+        get { return level; }
+        set { level = value; }
     }
 
 }
