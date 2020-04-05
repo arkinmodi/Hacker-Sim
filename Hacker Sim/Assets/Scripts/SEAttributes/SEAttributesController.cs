@@ -41,6 +41,18 @@ public class SEAttributesController
         SaveSEAttributes.SavePlayer(player);
     }
 
+    public static void IncreaseFitness(SEAttributes player) // When SE eats 
+    {
+        player.Fitness += 1;
+        SaveSEAttributes.SavePlayer(player);
+    }
+
+    public static void DecreaseFitness(SEAttributes player) // When SE eats 
+    {
+        player.Fitness -= 1;
+        SaveSEAttributes.SavePlayer(player);
+    }
+
     public static void AdjustCurrency(SEAttributes player, double deltaCurrency) // When money is earned (+) or spent (-)
     {
         player.PlayerCurrency += deltaCurrency;
