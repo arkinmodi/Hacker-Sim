@@ -15,7 +15,7 @@ public class ProjectsController : MonoBehaviour
     private int initialized = 0;
     public int workingOn = 0;
     private float hourCount = 3600;
-    private float[] minuteCount = new float[] { 60, 60, 60, 60, 60 };
+    private float[] minuteCount = new float[] { 1, 1, 1, 1, 1 };
     public ProjectList projects;
 
     // Start is called before the first frame update
@@ -23,16 +23,16 @@ public class ProjectsController : MonoBehaviour
     {
 
         workingOn = PlayerPrefs.GetInt("currently_working_on", 0);
-        setSceneActive();
+        setSceneActive(0);
 
         initialized = PlayerPrefs.GetInt("initializedProjects", 0);
         //print(initialized);
         hourCount = PlayerPrefs.GetFloat("second_left_hour", 3600);
-        minuteCount[0] = PlayerPrefs.GetFloat("second_left_minute_1", 60);
-        minuteCount[1] = PlayerPrefs.GetFloat("second_left_minute_2", 60);
-        minuteCount[2] = PlayerPrefs.GetFloat("second_left_minute_3", 60);
-        minuteCount[3] = PlayerPrefs.GetFloat("second_left_minute_4", 60);
-        minuteCount[4] = PlayerPrefs.GetFloat("second_left_minute_5", 60);
+        minuteCount[0] = PlayerPrefs.GetFloat("second_left_minute_1", 1);
+        minuteCount[1] = PlayerPrefs.GetFloat("second_left_minute_2", 1);
+        minuteCount[2] = PlayerPrefs.GetFloat("second_left_minute_3", 1);
+        minuteCount[3] = PlayerPrefs.GetFloat("second_left_minute_4", 1);
+        minuteCount[4] = PlayerPrefs.GetFloat("second_left_minute_5", 1);
         if (initialized == 0)
         {
             initializeProjects();
@@ -72,12 +72,12 @@ public class ProjectsController : MonoBehaviour
         {
             
             minuteCount[workingOn - 1] -= Time.deltaTime;
-            //print(minuteCount[workingOn - 1]);
+            print(minuteCount[workingOn - 1]);
             if (Mathf.Round(minuteCount[workingOn - 1]) == 0)
             {
-                minuteCount[workingOn - 1] = 60;
+                minuteCount[workingOn - 1] = 1;
                 int minuteLeft = projects.minutePass(workingOn);
-                //print(minuteLeft);
+                print(minuteLeft);
                 if (minuteLeft == 0)
                 {
                     Project compProject = projects.GetProject(workingOn);
@@ -89,10 +89,11 @@ public class ProjectsController : MonoBehaviour
                     projects.RemoveProjects(workingOn);
                     Project newProject = generateNewProject(workingOn);
                     projects.AddProject(newProject);
-                    setCurrentSceneInactive();
+                    int temp = workingOn;
                     stopProject();
-                    setSceneActive();
-                    
+                    setSceneActive(temp);
+                    setPreviousSceneInactive(temp);
+
                 }
             }
             
@@ -215,7 +216,7 @@ public class ProjectsController : MonoBehaviour
 
     }
 
-    void setSceneActive()
+    void setSceneActive(int previous)
     {
 
         if(workingOn == 1)
@@ -258,36 +259,43 @@ public class ProjectsController : MonoBehaviour
             GameObject startOne = startOneTrans.gameObject;
             startOne.SetActive(true);
         }
-        else if(workingOn == 0)
+        else if(workingOn == 0 && previous != 0)
         {
-            GameObject initialState = GameObject.Find("Canvas/ProjectsViewInit");
-            initialState.SetActive(true);
+            
+            string temp = "Canvas/ProjectsViewStart" + previous;
+            //print(temp);
+            GameObject initialState = GameObject.Find(temp);
+            //print(initialState == null);
+            Transform startOneTrans = initialState.transform.parent.Find("ProjectsViewInit");
+            GameObject startOne = startOneTrans.gameObject;
+            startOne.SetActive(true);
         }
     }
 
-    void setCurrentSceneInactive()
+    void setPreviousSceneInactive(int previous)
     {
-        if (workingOn == 1)
+        print(previous);
+        if (previous == 1)
         {
             GameObject currentState = GameObject.Find("Canvas/ProjectsViewStart1");
             currentState.SetActive(false);
         }
-        else if (workingOn == 2)
+        else if (previous == 2)
         {
             GameObject currentState = GameObject.Find("Canvas/ProjectsViewStart2");
             currentState.SetActive(false);
         }
-        else if (workingOn == 3)
+        else if (previous == 3)
         {
             GameObject currentState = GameObject.Find("Canvas/ProjectsViewStart3");
             currentState.SetActive(false);
         }
-        else if (workingOn == 4)
+        else if (previous == 4)
         {
             GameObject currentState = GameObject.Find("Canvas/ProjectsViewStart4");
             currentState.SetActive(false);
         }
-        else if (workingOn == 5)
+        else if (previous == 5)
         {
             GameObject currentState = GameObject.Find("Canvas/ProjectsViewStart5");
             currentState.SetActive(false);
