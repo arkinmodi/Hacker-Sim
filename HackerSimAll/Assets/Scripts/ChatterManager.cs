@@ -8,8 +8,13 @@ public class ChatterManager : ChatterManagerBehavior
 {
     public Transform chatContent;
     public GameObject chatMessage;
+    private string username;
 
-    private string username = "name";
+    void Start()
+    {
+      SEAttributes player = SaveSEAttributes.LoadPlayer();
+      username = player.PlayerName;
+    }
 
     // Send message across network
     public void WriteMessage(InputField sender)
@@ -42,6 +47,7 @@ public class ChatterManager : ChatterManagerBehavior
     public void Exit()
     {
         // networkObject.Destroy();
+        //MultiplayerMenu.leave();
         SceneManager.LoadScene("MultiplayerMenu");
     }
 }

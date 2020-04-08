@@ -35,6 +35,7 @@ public class TimeStep
               if(AddItem.isPlant)
                 SEAttributesController.IncreaseMood(player);
             }
+            alt = !alt;
         }
         if(player.currState != "" && gameMinutes % 4 == 0 && gameMinutes != prevtime)
         {

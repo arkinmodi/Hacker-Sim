@@ -247,10 +247,12 @@ public class MultiplayerMenu : MonoBehaviour
 
 	public void leave()
 	{
+		UnityEngine.Debug.Log("gone");
 		if (getLocalNetworkConnections)
 			NetWorker.EndSession();
 
 		if (server != null) server.Disconnect(true);
+		Exit();
 	}
 
 	public void Exit()
