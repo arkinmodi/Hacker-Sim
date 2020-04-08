@@ -111,7 +111,7 @@ public class MultiplayerMenu : MonoBehaviour
 
 		if (mgr == null && networkManager == null)
 			throw new System.Exception("A network manager was not provided, this is required for the tons of fancy stuff");
-		
+
 		mgr = Instantiate(networkManager).GetComponent<NetworkManager>();
 
 		mgr.MatchmakingServersFromMasterServer(masterServerHost, masterServerPort, myElo, (response) =>
@@ -238,6 +238,15 @@ public class MultiplayerMenu : MonoBehaviour
 
 	private void OnApplicationQuit()
 	{
+		UnityEngine.Debug.Log("gone");
+		if (getLocalNetworkConnections)
+			NetWorker.EndSession();
+
+		if (server != null) server.Disconnect(true);
+	}
+
+	public void leave()
+	{
 		if (getLocalNetworkConnections)
 			NetWorker.EndSession();
 
@@ -246,6 +255,6 @@ public class MultiplayerMenu : MonoBehaviour
 
 	public void Exit()
 	{
-		SceneManager.LoadScene("MultiplayerMenu");
+		SceneManager.LoadScene("GeneralRoom");
 	}
 }

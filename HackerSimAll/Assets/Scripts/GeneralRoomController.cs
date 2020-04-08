@@ -23,7 +23,7 @@ public class GeneralRoomController : MonoBehaviour
         SceneManager.LoadScene("SEAttributes");
     }
 
-    public void Save()
+    public void SelectSave()
     {
       SEAttributes player = SaveSEAttributes.LoadPlayer();
       SaveSEAttributes.SavePlayer(player);
@@ -41,7 +41,7 @@ public class GeneralRoomController : MonoBehaviour
 
     public void SelectChat()
     {
-      SceneManager.LoadScene("Chat");
+      SceneManager.LoadScene("MultiplayerMenu");
     }
 
     public void SelectExer()

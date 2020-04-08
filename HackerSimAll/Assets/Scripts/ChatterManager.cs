@@ -42,6 +42,6 @@ public class ChatterManager : ChatterManagerBehavior
     public void Exit()
     {
         // networkObject.Destroy();
-        SceneManager.LoadScene("GeneralRoom");
+        SceneManager.LoadScene("MultiplayerMenu");
     }
 }
