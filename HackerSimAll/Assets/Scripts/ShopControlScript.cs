@@ -34,6 +34,8 @@ public class ShopControlScript : MonoBehaviour {
 	private int StockTree = 1;
 	private int StockTread = 1;
 
+	private int amount = 0;
+
 	private Image rend;
 	// private Sprite chair, chair2, chair3, chair4, chair5;
 
@@ -148,6 +150,7 @@ public class ShopControlScript : MonoBehaviour {
 	{
 		moneyAmount -= 1;
 		ApplePrice.text = "Bought!";
+		amount += 5;
 		//buyAppleButton.gameObject.SetActive (false);
 	}
 
@@ -156,6 +159,10 @@ public class ShopControlScript : MonoBehaviour {
 		// PlayerPrefs.SetInt ("MoneyAmount", moneyAmount);
 		SEAttributesController.AdjustCurrency(player, -player.PlayerCurrency);
 		SEAttributesController.AdjustCurrency(player, moneyAmount);
+		for(int i = 0; i < amount; i++)
+		{
+			SEAttributesController.DecreaseHunger(player);
+		}
 		SceneManager.LoadScene ("GeneralRoom");
 	}
 
